@@ -44,13 +44,6 @@ filetype plugin indent on
 
 
 
-
-" Automatic reloading of .vimrc
-autocmd! bufwritepost .vimrc source %
-
-
-
-
 """"""""""""""""""""""""""""""
 "" COLORS AND FORMATTING
 
@@ -79,31 +72,29 @@ set fo-=t   " don't automatically wrap text when typing
 "" PREFERENCES
 
 
-" Better copy & paste
-" When you want to paste large blocks of code into vim, press F2 before you
-" paste. At the bottom you should see ``-- INSERT (paste) --``.
+" Automatic reloading of .vimrc
+autocmd! bufwritepost .vimrc source %
 
+
+" Better copy & paste
+" Press F2 before pasting large blocks of code
 set pastetoggle=<F2>
 set clipboard=unnamed
 
 
 " Rebind <Leader> key
-" I like to have it here becuase it is easier to reach than the default and
-" it is next to ``m`` and ``n`` which I use for navigating between tabs.
 let mapleader = ","
 
 
 " Bind nohl
-" Removes highlight of your last search
-" ``<C>`` stands for ``CTRL`` and therefore ``<C-n>`` stands for ``CTRL+n``
+" Ctrl+n to remove highlighting after search
 noremap <C-n> :nohl<CR>
 vnoremap <C-n> :nohl<CR>
 inoremap <C-n> :nohl<CR>
 
 
-" easier moving of code blocks
-" Try to go into visual mode (v), thenselect several lines of code here and
-" then press ``>`` several times.
+" Move code blocks horizontally
+" Select a block of code and use ``>`` and ``<`` to move it
 vnoremap < <gv  " better indentation
 vnoremap > >gv  " better indentation
 
@@ -155,8 +146,6 @@ let g:airline_theme = 'powerlineish'
 
 
 " Settings for ctrlp
-" cd ~/.vim/bundle
-" git clone https://github.com/kien/ctrlp.vim.git
 let g:ctrlp_max_height = 30
 set wildignore+=*.pyc
 set wildignore+=*_build/*
@@ -170,8 +159,6 @@ let g:slime_paste_file = "$HOME/.slime_paste"
 let g:slime_no_mappings = 1
 vmap <C-j> <Plug>SlimeRegionSend '>j
 nmap <C-j> <Plug>SlimeLineSend j
-
-
 
 
 
@@ -213,7 +200,7 @@ inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 " 2. Putty (#2) --> login --> screen -S interp --> open an interpreter
 " 3. In Vim, select code and do ^C^C to send code to the interpreter
 "    -- Session name is 'interp'
-"    -- Window name is 'bash'
+"    -- Window name is '0'
 "
 
 
