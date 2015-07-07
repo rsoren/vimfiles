@@ -155,9 +155,10 @@ set wildignore+=*/coverage/*
 let g:slime_target = "screen"
 let g:slime_paste_file = "$HOME/.slime_paste"
 let g:slime_no_mappings = 1
-vmap <C-j> <Plug>SlimeRegionSend '>j
-nmap <C-j> <Plug>SlimeLineSend j
 
+vmap 'j <Plug>SlimeRegionSend '>j
+nmap 'j <Plug>SlimeLineSend j
+imap 'j <Esc>0
 
 
 " Better navigating through omnicomplete option list
