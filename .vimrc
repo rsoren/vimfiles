@@ -42,8 +42,6 @@ filetype plugin indent on
 
 
 
-
-
 """"""""""""""""""""""""""""""
 "" COLORS AND FORMATTING
 
@@ -71,13 +69,13 @@ set fo-=t   " don't automatically wrap text when typing
 """"""""""""""""""""""""""""""
 "" PREFERENCES
 
-
+"
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
 
-" Better copy & paste
-" Press F2 before pasting large blocks of code
+
+" Better copy & paste -- press F2 before pasting large code blocks
 set pastetoggle=<F2>
 set clipboard=unnamed
 
@@ -87,14 +85,14 @@ let mapleader = ","
 
 
 " Bind nohl
-" Ctrl+n to remove highlighting after search
+" ``Ctrl+n`` removes highlight of your last search
 noremap <C-n> :nohl<CR>
 vnoremap <C-n> :nohl<CR>
 inoremap <C-n> :nohl<CR>
 
 
 " Move code blocks horizontally
-" Select a block of code and use ``>`` and ``<`` to move it
+" Visual select a block of code, then use ``>`` and ``<``
 vnoremap < <gv  " better indentation
 vnoremap > >gv  " better indentation
 
@@ -186,12 +184,15 @@ inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 "" OTHER CONFIG STEPS
 
 
-" Fix colors in GNU Screen; add these lines to ~/.screenrc
+" Fix colors in GNU Screen and remove vim-slime delay
+" Add the following lines to ~/.screenrc
 "
 " attrcolor b ".I"
 " defbce "on"
 " termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 " term xterm-256color
+"
+" msgwait 0
 "
 
 
@@ -200,7 +201,7 @@ inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 " 2. Putty (#2) --> login --> screen -S interp --> open an interpreter
 " 3. In Vim, select code and do ^C^C to send code to the interpreter
 "    -- Session name is 'interp'
-"    -- Window name is '0'
+"    -- Window name is '0' (default)
 "
 
 
