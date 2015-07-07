@@ -156,27 +156,9 @@ let g:slime_target = "screen"
 let g:slime_paste_file = "$HOME/.slime_paste"
 let g:slime_no_mappings = 1
 
-vmap 'j <Plug>SlimeRegionSend '>j
-nmap 'j <Plug>SlimeLineSend j
-imap 'j <Esc>0
-
-
-" Better navigating through omnicomplete option list
-" See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
-set completeopt=longest,menuone
-function! OmniPopup(action)
-    if pumvisible()
-        if a:action == 'j'
-            return "\<C-N>"
-        elseif a:action == 'k'
-            return "\<C-P>"
-        endif
-    endif
-    return a:action
-endfunction
-
-inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
-inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
+vmap <C-j> <Plug>SlimeRegionSend '>j
+nmap <C-j> <Plug>SlimeLineSend 0j
+imap <C-j> <Esc><Plug>SlimeLineSend 0j
 
 
 
