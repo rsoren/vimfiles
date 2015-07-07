@@ -1,8 +1,48 @@
-" mkdir -p ~/.vim/autoload ~/.vim/bundle
-" Setup Pathogen to manage plugins
-" curl -so ~/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-" Now you can install any plugin into a .vim/bundle/plugin-name/ folder
-call pathogen#infect()
+"
+" .vimrc
+" Vim configuration file
+" Reed Sorensen
+" rsoren@uw.edu
+"
+
+
+""""""""""""""""""""""""""""""""""""""""
+" Vundle plug-in manager
+" git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+set nocompatible
+filetype off
+
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+
+" load plug-ins
+Plugin 'gmarik/Vundle.vim' "required
+Plugin 'flazz/vim-colorschemes'
+Plugin 'bling/vim-airline'
+Plugin 'jpalardy/vim-slime'
+Plugin 'kien/ctrlp.vim'
+
+
+" finish
+call vundle#end()
+filetype plugin indent on
+
+
+" some useful commands
+" " :PluginList       - lists configured plugins
+" " :PluginInstall    - installs plugins; append `!` to update
+" " :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" " :PluginClean      - confirms removal of unused plugins
+" " see :h vundle for more details or wiki for FAQ
+
+
+
+
+
 
 
 " Automatic reloading of .vimrc
@@ -14,6 +54,7 @@ autocmd! bufwritepost .vimrc source %
 """"""""""""""""""""""""""""""
 "" COLORS AND FORMATTING
 
+set t_Co=256
 
 colorscheme jellybeans
 
